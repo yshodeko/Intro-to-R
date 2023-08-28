@@ -62,36 +62,6 @@ cat("Problem 1:\n")
 cat("Variable with the highest average:", name_of_max_avg, "\n")
 
 
-# Problem 2: Print variable names and numbers that are 2 standard deviations above the averages
-avg_values <- rowMeans(exercise %>%
-                         select(where(is.numeric)),
-                       na.rm = TRUE)
-std_dev <- sd(avg_values, na.rm = TRUE)
-threshold <- mean(avg_values, na.rm = TRUE) + 2 * std_dev
-
-above_threshold <- which(avg_values > threshold)
-names_above_threshold <- row.names(exercise)[above_threshold]
-
-# Print the result
-cat("\nProblem 2:\n")
-cat("Genes with averages above 2 standard deviations:\n")
-for (name in names_above_threshold) {
-  cat("Gene name:", name, "\tAverage:", avg_values[name], "\n")
-}
-
-
-# Load required libraries
-library(dplyr)
-
-# Create a sample data frame
-exercise <- data.frame(
-  Gene = c("aaeA", "aaeB", "aaeR", "aaeX", "aas", "aat"),
-  E14R012a01 = c(100, 116, 316, 77, 407, 243),
-  E14R012a02 = c(56, 47, 253, 53, 286, 169),
-  E14R012a03 = c(44, 54, 249, 53, 283, 163),
-  E14R012a04 = c(94, 80, 396, 86, 375, 252),
-  E14R012a05 = c(32, 37, 181, 46, 188, 104)
-)
 
 # Problem 2: Print gene names and numbers that are 2 standard deviations above the averages
 avg_values <- rowMeans(exercise %>%

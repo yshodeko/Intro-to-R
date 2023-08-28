@@ -27,3 +27,5 @@ ggplot(dat)+
 ggplot(dat)+
   geom_point(aes(CPI, HDI,size = HDI.Rank))+
   labs(title="scatter plot with CPI on the x axis and HDI on the y axis and map the size of the points to HDI.Rank")
+
+dim(dat)

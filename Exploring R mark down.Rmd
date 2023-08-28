@@ -1,0 +1,33 @@
+---
+title: "Exploring R Markdown"
+author: "Shodeko Yusuf"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# setting up my environment
+* Setting up my environment by loading the library "tidyverse".
+```{r}
+library(tidyverse)
+```
+
+# Reading in the data SalesJan2009.
+* Read the SalesJan2009 data into a variable called "metadata"
+```{r}
+metadata <- read.csv("SalesJan2009.csv")
+```
+
+## Exploring our metadata
+* Use head, tail and summary function to explore our metadata.
+```{r}
+head(metadata)
+tail(metadata)
+summary(metadata)
+```
+
+# Visualizing our metadata to display the relationship between the variables in the dataset
+* Using plot to create a graph to explore our metadata
+```{r}
+plot(metadata)
+```
+
